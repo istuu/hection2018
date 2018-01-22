@@ -10,44 +10,45 @@
 
 return [
         'names' => [
-                'static' => [
-                        'name' => 'Static',
-                        'thumb' => ''
+                'home' => [
+                        'name' => 'Home',
+                        'thumb' => '',
+                        'sections' => [
+                            'banner',
+                            'about',
+                            'contest',
+                            'prize',
+                            'gellery',
+                            'register',
+                        ]
                 ],
-                'news' => [
-                        'name' => 'News',
-                        'thumb' => ''
-                ],
-                'leads' => [
-                        'name' => 'Leads'
-                ]
         ],
         'sections' => [
-                'slide' => [
-                        'name' => 'Slide',
-                        'model' => 'slide',
-                        'limit' => 0,
-                        'panel' => 'slides'
+                'banner' => [
+                        'name' => 'Banner',
+                        'raw' => true
+                ],
+                'about' => [
+                        'name' => 'About',
+                        'raw' => true
+                ],
+                'contest' => [
+                        'name' => 'Contest',
+                        'raw' => true
+                ],
+                'prize' => [
+                        'name' => 'Prize',
+                        'raw' => true
+                ],
+                'gallery' => [
+                        'name' => 'Gallery',
+                        'raw' => true
+                ],
+                'register' => [
+                        'name' => 'Register',
+                        'raw' => true
+                ],
 
-                ],
-                'static-pages' => [
-                        'name' => 'Static Pages',
-                        'view' => 'static',
-//                        'model' => 'page',
-                        'table' => [
-                                'name' => 'pages',
-                                'translate' => ['title', 'intro', 'description']
-                        ],
-                        'panel' => 'pages',
-                        'limit' => 0,
-                        'paginate' => 1
-                ],
-                'leads' => [
-                        'name' => 'Leads Form',
-                        'raw' => function() {
-                                return Wa::manager('site.lead', Wa::menu()->getActive()->lead)->toHtml();
-                        }
-                ]
         ],
         'modals' => [
                 'default' => 'Are you sure you want to do this?',

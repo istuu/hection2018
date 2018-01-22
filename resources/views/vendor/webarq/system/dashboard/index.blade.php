@@ -16,7 +16,7 @@
     <div class="row">
         <div class="col-lg-4 col-xs-6">
             <!-- small box -->
-            <div class="small-box bg-first">
+            <div class="small-box bg-aqua">
                 <div class="inner">
                     <h3>{{ $dailyActivity }}</h3>
 
@@ -33,7 +33,7 @@
         <!-- ./col -->
         <div class="col-lg-4 col-xs-6">
             <!-- small box -->
-            <div class="small-box bg-second">
+            <div class="small-box bg-green">
                 <div class="inner">
                     <h3>{{ $weeklyActivity }}</h3>
 
@@ -50,7 +50,7 @@
         <!-- ./col -->
         <div class="col-lg-4 col-xs-6">
             <!-- small box -->
-            <div class="small-box bg-third">
+            <div class="small-box bg-yellow">
                 <div class="inner">
                     <h3>{{ $monthlyActivity }}</h3>
 

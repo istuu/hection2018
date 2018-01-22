@@ -14,9 +14,11 @@ return [
         'icon' => 'fa-gears',
         'tables' => [
                 'histories', 'permissions', 'configurations', 'admins', 'admin_roles', 'roles', 'menus',
-                'menu_positions', 'sections', 'admin_password_resets', 'leads',
+                'menu_positions', 'sections',
+                'socials',
+                'notifications',
                 'email_templates',
-                'socials'
+                'admin_password_resets'
         ],
         'panels' => [
                 'dashboard' => [
@@ -30,20 +32,13 @@ return [
                         'guarded' => false
                 ],
                 'configurations',
-                'leads' => [
-                        'permalink' => true,
-                        'actions' => [
-                                'followup' => [
-
-                                ]
-                        ]
-                ],
                 'admins',
                 'roles',
                 'menus',
                 'sections',
+                'socials',
+                'notifications',
                 'email_templates',
-                'socials'
                 // 'localization'
         ],
 ];

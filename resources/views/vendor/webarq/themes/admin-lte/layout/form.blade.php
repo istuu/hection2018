@@ -15,8 +15,51 @@
 <script>
     $(function () {
         CKEDITOR.config.contentsCss = '{{ URL::asset('vendor/webarq/default/css/ckeditor.css') }}';
+        CKEDITOR.config.filebrowserBrowseUrl = '{{URL::panel("image/image/lib")}}';
+
+    });
+    $("#datemax").datepicker({
+        autoclose: true
     });
 </script>
+@if(request()->segment(5) !== 'system')
+<script>
+$('form').submit(function(e){
+    e.preventDefault();
+    $.ajax( {
+        type: "POST",
+        url: baseUrl + '/helper/form/{{ request()->segment(4) }}/{{ $strModule }}/{{ $strPanel }}',
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: new FormData(this),
+        success: function( result ) {
+            if(result !== 'success'){
+                $("#alert").html(result);
+                window.scrollTo(0, 0);
+            }else{
+                 $('form').unbind('submit').submit();
+            }
+        }
+    } );
+});
+</script>
+@endif
+
+@if(request()->segment(6) == 'box_circles' || request()->segment(6) == 'overview_sliders')
+<script>
+    $("select[name='section_id']").change(function(){
+        var section_id = $(this).val();
+        $.ajax( {
+            type: "GET",
+            url: "{{ url('admin-cp/section/box_circles/placement') }}"+'/'+section_id,
+            success: function( result ) {
+                $("select[name='placement']").html(result);
+            }
+        } );
+    });
+</script>
+@endif
 @if ('create' === $strAction)
     <script>
         $(function () {
@@ -62,4 +105,3 @@
     </script>
 @endif
 @endpush
-

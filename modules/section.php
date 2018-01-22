@@ -9,10 +9,13 @@
  */
 
 return [
-        'icon' => 'fa-clone',
-        'tables' => ['pages', 'slides'],
+        'icon' => 'fa-th',
+        'tables' => [
+                'banners',
+        
+        ],
         'panels' => [
-                'pages',
-                'slides'
+                'banners',
+
         ]
 ];
